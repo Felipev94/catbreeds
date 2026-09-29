@@ -8,6 +8,7 @@ environment:
 
 workspace:
   - packages/design_system
+  - packages/monitoring
 
 dependencies:
   bloc_signals: ^1.5.0
@@ -20,6 +21,7 @@ dependencies:
   go_router: ^18.0.2
   json_annotation: ^4.12.0
   mockito: ^5.8.1
+  monitoring:
   retrofit: ^4.10.0
 
 dev_dependencies:

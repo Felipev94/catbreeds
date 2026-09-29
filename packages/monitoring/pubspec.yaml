@@ -1,0 +1,14 @@
+name: monitoring
+description: Agnostic, extensible monitoring module supporting logging, crash reporting, and analytics tracking via adapters.
+version: 0.1.0
+publish_to: 'none'
+resolution: workspace
+
+environment:
+  sdk: ^3.13.0
+
+dependencies:
+  meta: ^1.11.0
+
+dev_dependencies:
+  test: ^1.24.0
