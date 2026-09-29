@@ -6,11 +6,14 @@ version: 0.1.0-alpha.1
 environment:
   sdk: ^3.13.0
 
+workspace:
+  - packages/design_system
 
 dependencies:
   bloc_signals: ^1.5.0
   bloc_signals_flutter: ^1.3.2
-  bloc_signals_test: ^1.0.0+1
+  bloc_signals_test: ^1.0.0
+  design_system:
   dio: ^5.11.1
   flutter:
     sdk: flutter
