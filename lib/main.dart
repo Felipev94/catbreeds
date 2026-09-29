@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:design_system/design_system.dart';
+import 'package:monitoring/monitoring.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Monitoring.initialize(adapters: [ConsoleMonitoringAdapter()]);
+
+  Monitoring.logger.info('Application bootstrapping completed');
+
+  Monitoring.runGuarded(() {
+    runApp(const MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -15,15 +24,13 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: ThemeMode.system,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
