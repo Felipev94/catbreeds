@@ -19,7 +19,10 @@ dependencies:
   dio: ^5.11.1
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   go_router: ^18.0.2
+  intl: ^0.20.3
   json_annotation: ^4.12.0
   mockito: ^5.8.1
   monitoring:
@@ -35,5 +38,6 @@ dev_dependencies:
   retrofit_generator: ^10.2.11
 
 flutter:
+  generate: true
   uses-material-design: true
 

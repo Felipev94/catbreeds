@@ -1,6 +1,10 @@
+import 'package:catbreeds/app/ui/l10n/extension/l10n_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:design_system/design_system.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:monitoring/monitoring.dart';
+
+import 'app/ui/l10n/gen/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,10 +24,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Catbreeds',
+      title: context.l10n.appName,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: ThemeMode.system,
+      localizationsDelegates: [
+        AppLocalizations.delegate,
+        ...GlobalMaterialLocalizations.delegates,
+      ],
+      supportedLocales: AppLocalizations.supportedLocales,
       home: const MyHomePage(),
     );
   }
@@ -42,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('Catbreeds'),
+        title: Text(context.l10n.appName),
       ),
       body: Center(
         child: Column(mainAxisAlignment: .center, children: []),
