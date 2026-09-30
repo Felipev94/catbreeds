@@ -1,4 +1,3 @@
-import 'package:networking/src/config/network_options.dart';
 import 'package:test/test.dart';
 import 'package:networking/networking.dart';
 
