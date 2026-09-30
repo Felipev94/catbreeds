@@ -1,4 +1,3 @@
-import 'package:catbreeds/app/ui/l10n/extension/l10n_extension.dart';
 import 'package:catbreeds/app/ui/navigation/app_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:design_system/design_system.dart';
@@ -7,7 +6,7 @@ import 'package:monitoring/monitoring.dart';
 
 import 'app/ui/l10n/gen/app_localizations.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Monitoring.initialize(adapters: [ConsoleMonitoringAdapter()]);
@@ -25,7 +24,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: context.l10n.appName,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: ThemeMode.system,
