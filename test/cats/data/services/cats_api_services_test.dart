@@ -3,7 +3,7 @@ import 'package:catbreeds/cats/data/services/cats_api_services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:networking/networking.dart';
+import 'package:core/core.dart';
 
 import 'cats_api_services_test.mocks.dart';
 

@@ -1,8 +1,8 @@
-import 'package:catbreeds/cats/data/datasources/dtos/cat_dto.dart';
-import 'package:catbreeds/cats/data/services/cats_api_services.dart';
-import 'package:networking/networking.dart';
+import 'package:core/core.dart';
 
 import 'cats_datasource_remote.dart';
+import '../dtos/cat_dto.dart';
+import '../../services/cats_api_services.dart';
 
 class CatsDatasourceRemoteImpl implements CatsDatasourceRemote {
   final CatsApiServices _catsApiServices;

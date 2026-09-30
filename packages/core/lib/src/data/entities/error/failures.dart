@@ -13,10 +13,6 @@ class NetworkFailure extends Failure {
   const NetworkFailure([super.message = "No internet connection"]);
 }
 
-class CacheFailure extends Failure {
-  const CacheFailure([super.message = "Failed to load cached data"]);
-}
-
 class UnknownFailure extends Failure {
   const UnknownFailure([super.message = "An unexpected error occurred"]);
 }

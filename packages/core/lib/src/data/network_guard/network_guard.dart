@@ -1,10 +1,9 @@
 import 'dart:io';
 
-import 'package:dio/dio.dart';
-import 'package:retrofit/retrofit.dart';
+import 'package:networking/networking.dart';
 
+import '../entities/error/failures.dart';
 import 'api_response.dart';
-import 'failures.dart';
 
 class NetworkGuard {
   static Future<ApiResponse<T>> execute<T>(
