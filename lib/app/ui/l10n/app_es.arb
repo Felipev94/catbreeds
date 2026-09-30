@@ -1,0 +1,6 @@
+{
+    "appName": "CatBreeds",
+    "@appName": {
+        "description": "Application name."
+    }
+}
