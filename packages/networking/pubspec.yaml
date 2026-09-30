@@ -9,6 +9,7 @@ environment:
 
 dependencies:
   dio: ^5.11.1
+  retrofit: ^4.10.0
   
 dev_dependencies:
   test: ^1.24.0
