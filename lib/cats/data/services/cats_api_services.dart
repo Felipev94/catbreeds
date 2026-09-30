@@ -1,5 +1,5 @@
 import 'package:catbreeds/cats/data/datasources/dtos/cat_dto.dart';
-import 'package:networking/networking.dart';
+import 'package:core/core.dart';
 
 part 'cats_api_services.g.dart';
 

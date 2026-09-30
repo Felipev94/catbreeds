@@ -23,4 +23,9 @@ class CatsDatasourceLocalImpl implements CatsDatasourceLocal {
       _cache.write<CatDto>(key: cat.id, value: cat);
     }
   }
+
+  @override
+  void saveCat(CatDto cat) {
+    _cache.write<CatDto>(key: cat.id, value: cat);
+  }
 }

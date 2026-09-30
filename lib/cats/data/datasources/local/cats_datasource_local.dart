@@ -5,5 +5,7 @@ abstract interface class CatsDatasourceLocal {
 
   void saveCats(List<CatDto> cats);
 
+  void saveCat(CatDto cat);
+
   CatDto? getCatById(String catId);
 }

@@ -4,7 +4,7 @@ import 'package:catbreeds/cats/data/services/cats_api_services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:networking/networking.dart';
+import 'package:core/core.dart';
 
 import 'cats_datasource_remote_impl_test.mocks.dart';
 
@@ -32,23 +32,26 @@ void main() {
   });
 
   group('CatsDatasourceRemoteImpl', () {
-    test('fetchCats returns ApiResponse.success when api returns 200', () async {
-      final response = Response<dynamic>(
-        requestOptions: requestOptions,
-        statusCode: 200,
-      );
-      final httpResponse = HttpResponse<List<CatDto>>([sampleCat], response);
+    test(
+      'fetchCats returns ApiResponse.success when api returns 200',
+      () async {
+        final response = Response<dynamic>(
+          requestOptions: requestOptions,
+          statusCode: 200,
+        );
+        final httpResponse = HttpResponse<List<CatDto>>([sampleCat], response);
 
-      when(mockApiServices.getCats()).thenAnswer((_) async => httpResponse);
+        when(mockApiServices.getCats()).thenAnswer((_) async => httpResponse);
 
-      final result = await datasource.fetchCats();
+        final result = await datasource.fetchCats();
 
-      expect(result.isSuccess, isTrue);
-      expect(result.data, hasLength(1));
-      expect(result.data?.first.id, equals('abys'));
-      expect(result.failure, isNull);
-      verify(mockApiServices.getCats()).called(1);
-    });
+        expect(result.isSuccess, isTrue);
+        expect(result.data, hasLength(1));
+        expect(result.data?.first.id, equals('abys'));
+        expect(result.failure, isNull);
+        verify(mockApiServices.getCats()).called(1);
+      },
+    );
 
     test('fetchCats returns ApiResponse.error with ServerFailure when api throws 500 DioException', () async {
       final dioException = DioException(

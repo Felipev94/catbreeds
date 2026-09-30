@@ -78,5 +78,12 @@ void main() {
       verify(mockCache.write<CatDto>(key: 'beng', value: sampleCat2)).called(1);
       verifyNoMoreInteractions(mockCache);
     });
+
+    test('saveCat writes a single cat using cat.id as key', () {
+      datasource.saveCat(sampleCat1);
+
+      verify(mockCache.write<CatDto>(key: 'abys', value: sampleCat1)).called(1);
+      verifyNoMoreInteractions(mockCache);
+    });
   });
 }

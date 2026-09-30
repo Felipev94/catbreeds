@@ -1,4 +1,5 @@
-import 'package:networking/src/guard/failures.dart';
+
+import '../entities/error/failures.dart';
 
 class ApiResponse<T> {
   final T? data;
