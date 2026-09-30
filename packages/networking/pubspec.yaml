@@ -1,0 +1,14 @@
+name: networking
+description: Agnostic, extensible networking module supporting HTTP requests and WebSocket connections.
+version: 0.1.0
+publish_to: 'none'
+resolution: workspace
+
+environment:
+  sdk: ^3.13.0
+
+dependencies:
+  dio: ^5.11.1
+  
+dev_dependencies:
+  test: ^1.24.0
