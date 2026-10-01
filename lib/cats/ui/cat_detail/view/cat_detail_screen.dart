@@ -3,21 +3,16 @@ import 'package:catbreeds/cats/data/datasources/local/cats_datasource_local_impl
 import 'package:catbreeds/cats/data/datasources/remote/cats_datasource_remote_impl.dart';
 import 'package:catbreeds/cats/data/repositories/cats_repository_impl.dart';
 import 'package:catbreeds/cats/data/services/cats_api_services.dart';
+import 'package:catbreeds/cats/ui/cat_detail/view/widgets/cat_detail_view.dart';
 import 'package:catbreeds/cats/ui/cat_detail/view_model/cat_detail_view_model.dart';
 import 'package:catbreeds/cats/ui/cat_detail/view_model/event/cat_detail_event.dart';
 import 'package:core/core.dart' hide State;
-import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-class CatDetailScreen extends StatefulWidget {
+class CatDetailScreen extends StatelessWidget {
   final String catId;
   const CatDetailScreen({required this.catId, super.key});
 
-  @override
-  State<CatDetailScreen> createState() => _CatDetailScreenState();
-}
-
-class _CatDetailScreenState extends State<CatDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocSignalProvider(
@@ -38,8 +33,8 @@ class _CatDetailScreenState extends State<CatDetailScreen> {
             ),
           ),
         ),
-      )..add(FetchCatDetail(widget.catId)),
-      child: ScaffoldTemplate(content: []),
+      )..add(FetchCatDetail(catId)),
+      child: CatDetailView(catId: catId),
     );
   }
 }
