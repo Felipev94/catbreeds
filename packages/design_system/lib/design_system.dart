@@ -14,6 +14,8 @@ export 'src/tokens/typography.dart';
 export 'src/theme/app_color_extension.dart';
 export 'src/theme/app_elevation_extension.dart';
 export 'src/theme/app_theme.dart';
+export 'src/theme/app_theme_provider.dart';
+export 'src/theme/app_theme_scope.dart';
 
 // Context Ergonomics
 export 'src/extensions/context_extensions.dart';
@@ -26,6 +28,9 @@ export 'src/templates/scaffold/scaffold_template.dart';
 // Widgets – Badges
 export 'src/widgets/badges/badge_label.dart';
 export 'src/widgets/badges/chevron_badge.dart';
+
+// Widgets – Buttons
+export 'src/widgets/buttons/theme_toggle_button.dart';
 
 // Widgets – Cards
 export 'src/widgets/cards/info_card.dart';

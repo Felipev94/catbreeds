@@ -34,6 +34,9 @@ class _CatsScreenState extends State<CatsScreen> {
             style: context.typography.titleLarge,
           ),
         ),
+        trailingHeader: ThemeToggleButton(
+          color: context.colors.onPrimary,
+        ),
         shrinkingHeader: SearchInput(
           hint: context.l10n.catsSearchHint,
           readOnly: true,

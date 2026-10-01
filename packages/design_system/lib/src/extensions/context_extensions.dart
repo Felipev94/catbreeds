@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../theme/app_color_extension.dart';
 import '../theme/app_elevation_extension.dart';
+import '../theme/app_theme_scope.dart';
 
 extension DesignSystemContextExtensions on BuildContext {
   ThemeData get theme => Theme.of(this);
@@ -20,4 +21,7 @@ extension DesignSystemContextExtensions on BuildContext {
       AppDimensionExtension.defaultDimensions;
 
   bool get isDarkMode => theme.brightness == Brightness.dark;
+
+  AppThemeScope get themeScope => AppThemeScope.of(this);
+  AppThemeScope? get maybeThemeScope => AppThemeScope.maybeOf(this);
 }

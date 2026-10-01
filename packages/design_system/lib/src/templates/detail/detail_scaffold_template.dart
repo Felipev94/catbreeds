@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 
 import '../../extensions/context_extensions.dart';
 
+import '../../widgets/buttons/theme_toggle_button.dart';
+
 class DetailScaffoldTemplate extends StatelessWidget {
   final String? title;
   final VoidCallback? onBack;
   final Widget? staticHeader;
   final Widget content;
   final bool scrollable;
+  final List<Widget>? actions;
 
   const DetailScaffoldTemplate({
     required this.content,
@@ -15,6 +18,7 @@ class DetailScaffoldTemplate extends StatelessWidget {
     this.onBack,
     this.staticHeader,
     this.scrollable = true,
+    this.actions,
     super.key,
   });
 
@@ -42,6 +46,7 @@ class DetailScaffoldTemplate extends StatelessWidget {
           ),
           onPressed: onBack ?? () => Navigator.of(context).maybePop(),
         ),
+        actions: actions ?? const [ThemeToggleButton()],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
