@@ -14,16 +14,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      theme: AppTheme.light(),
-      darkTheme: AppTheme.dark(),
-      themeMode: ThemeMode.light,
-      localizationsDelegates: [
-        AppLocalizations.delegate,
-        ...GlobalMaterialLocalizations.delegates,
-      ],
-      supportedLocales: AppLocalizations.supportedLocales,
-      routerConfig: AppNavigation.router,
+    return AppThemeProvider(
+      initialThemeMode: ThemeMode.system,
+      builder: (context, themeMode) {
+        return MaterialApp.router(
+          theme: AppTheme.light(),
+          darkTheme: AppTheme.dark(),
+          themeMode: themeMode,
+          localizationsDelegates: [
+            AppLocalizations.delegate,
+            ...GlobalMaterialLocalizations.delegates,
+          ],
+          supportedLocales: AppLocalizations.supportedLocales,
+          routerConfig: AppNavigation.router,
+        );
+      },
     );
   }
 }

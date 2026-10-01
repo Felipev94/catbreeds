@@ -77,5 +77,43 @@ void main() {
         equals(AppElevationExtension.light.level1),
       );
     });
+
+    testWidgets('maybeThemeScope returns null when not wrapped in AppThemeProvider', (tester) async {
+      late AppThemeScope? capturedScope;
+
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Builder(
+            builder: (context) {
+              capturedScope = context.maybeThemeScope;
+              return const SizedBox.shrink();
+            },
+          ),
+        ),
+      );
+
+      expect(capturedScope, isNull);
+    });
+
+    testWidgets('themeScope returns valid scope when wrapped in AppThemeProvider', (tester) async {
+      late AppThemeScope capturedScope;
+
+      await tester.pumpWidget(
+        AppThemeProvider(
+          initialThemeMode: ThemeMode.dark,
+          child: MaterialApp(
+            home: Builder(
+              builder: (context) {
+                capturedScope = context.themeScope;
+                return const SizedBox.shrink();
+              },
+            ),
+          ),
+        ),
+      );
+
+      expect(capturedScope.themeMode, equals(ThemeMode.dark));
+      expect(capturedScope.isDarkMode, isTrue);
+    });
   });
 }
