@@ -18,6 +18,8 @@ class CatsViewModel extends BlocSignal<CatsEvent, CatsState> {
     CatsEvent event,
     void Function(CatsState) emit,
   ) async {
+    emit(CatsState(cats: UiState.loading()));
+
     final Either<Failure, List<Cat>> response = await _catsRepository
         .fetchCats();
 
