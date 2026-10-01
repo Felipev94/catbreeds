@@ -2,6 +2,7 @@ import 'package:catbreeds/app/ui/navigation/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../cats/ui/cat_detail/view/cat_detail_screen.dart';
 import '../../../cats/ui/home/view/cats_screen.dart';
 
 abstract final class AppNavigation {
@@ -15,9 +16,8 @@ abstract final class AppNavigation {
           GoRoute(
             path: AppRoutes.CAT_DETAIL,
             builder: (context, state) {
-              // TODO(uncomment-code): When the cat detail screen will available.
-              // final String catId = state.pathParameters['catId'] ?? '';
-              return Container();
+              final String catId = state.pathParameters['catId'] ?? '';
+              return CatDetailScreen(catId: catId);
             },
           ),
         ],

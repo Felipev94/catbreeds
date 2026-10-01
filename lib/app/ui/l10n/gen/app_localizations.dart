@@ -99,6 +99,36 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'CatBreeds'**
   String get appName;
+
+  /// Placeholder text for the search input on the cats home screen.
+  ///
+  /// In es, this message translates to:
+  /// **'Busca por nombre o raza'**
+  String get catsSearchHint;
+
+  /// Label for the average life span detail row on the cat card.
+  ///
+  /// In es, this message translates to:
+  /// **'Vida promedio'**
+  String get catDetailLifeSpan;
+
+  /// Label for the country of origin detail row on the cat card.
+  ///
+  /// In es, this message translates to:
+  /// **'País de origen'**
+  String get catDetailOriginCountry;
+
+  /// Title shown on the error state of the cats home screen.
+  ///
+  /// In es, this message translates to:
+  /// **'Ha ocurrido un error'**
+  String get catsErrorTitle;
+
+  /// Label for the retry button on the cats home screen error state.
+  ///
+  /// In es, this message translates to:
+  /// **'Volver a intentar'**
+  String get catsErrorRetry;
 }
 
 class _AppLocalizationsDelegate

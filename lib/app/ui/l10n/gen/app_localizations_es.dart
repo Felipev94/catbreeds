@@ -11,4 +11,19 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get appName => 'CatBreeds';
+
+  @override
+  String get catsSearchHint => 'Busca por nombre o raza';
+
+  @override
+  String get catDetailLifeSpan => 'Vida promedio';
+
+  @override
+  String get catDetailOriginCountry => 'País de origen';
+
+  @override
+  String get catsErrorTitle => 'Ha ocurrido un error';
+
+  @override
+  String get catsErrorRetry => 'Volver a intentar';
 }
