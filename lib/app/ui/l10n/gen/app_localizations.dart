@@ -129,6 +129,90 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Volver a intentar'**
   String get catsErrorRetry;
+
+  /// Section header for cat description.
+  ///
+  /// In es, this message translates to:
+  /// **'Descripción'**
+  String get catDetailDescription;
+
+  /// Section header for cat temperament.
+  ///
+  /// In es, this message translates to:
+  /// **'Temperamento'**
+  String get catDetailTemperament;
+
+  /// Label for weight detail.
+  ///
+  /// In es, this message translates to:
+  /// **'Peso'**
+  String get catDetailWeight;
+
+  /// Label for height detail.
+  ///
+  /// In es, this message translates to:
+  /// **'Altura'**
+  String get catDetailHeight;
+
+  /// Label for breed group detail.
+  ///
+  /// In es, this message translates to:
+  /// **'Grupo de raza'**
+  String get catDetailBreedGroup;
+
+  /// Label for bred for detail.
+  ///
+  /// In es, this message translates to:
+  /// **'Criado para'**
+  String get catDetailBredFor;
+
+  /// Label for perfect for detail.
+  ///
+  /// In es, this message translates to:
+  /// **'Ideal para'**
+  String get catDetailPerfectFor;
+
+  /// Label for history detail.
+  ///
+  /// In es, this message translates to:
+  /// **'Historia'**
+  String get catDetailHistory;
+
+  /// Section header for general information.
+  ///
+  /// In es, this message translates to:
+  /// **'Información general'**
+  String get catDetailGeneralInfo;
+
+  /// Section header for physical characteristics.
+  ///
+  /// In es, this message translates to:
+  /// **'Características físicas'**
+  String get catDetailPhysicalCharacteristics;
+
+  /// Label for country codes detail row.
+  ///
+  /// In es, this message translates to:
+  /// **'Códigos de país'**
+  String get catDetailCountryCodes;
+
+  /// Formatted weight value with metric and imperial units.
+  ///
+  /// In es, this message translates to:
+  /// **'{metric} kg ({imperial} lbs)'**
+  String catDetailWeightValue(String metric, String imperial);
+
+  /// Formatted height value with metric and imperial units.
+  ///
+  /// In es, this message translates to:
+  /// **'{metric} cm ({imperial} in)'**
+  String catDetailHeightValue(String metric, String imperial);
+
+  /// Life span formatted with years unit.
+  ///
+  /// In es, this message translates to:
+  /// **'{years} años'**
+  String catDetailLifeSpanYears(String years);
 }
 
 class _AppLocalizationsDelegate

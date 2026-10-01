@@ -22,5 +22,87 @@
     "catsErrorRetry": "Volver a intentar",
     "@catsErrorRetry": {
         "description": "Label for the retry button on the cats home screen error state."
+    },
+    "catDetailDescription": "Descripción",
+    "@catDetailDescription": {
+        "description": "Section header for cat description."
+    },
+    "catDetailTemperament": "Temperamento",
+    "@catDetailTemperament": {
+        "description": "Section header for cat temperament."
+    },
+    "catDetailWeight": "Peso",
+    "@catDetailWeight": {
+        "description": "Label for weight detail."
+    },
+    "catDetailHeight": "Altura",
+    "@catDetailHeight": {
+        "description": "Label for height detail."
+    },
+    "catDetailBreedGroup": "Grupo de raza",
+    "@catDetailBreedGroup": {
+        "description": "Label for breed group detail."
+    },
+    "catDetailBredFor": "Criado para",
+    "@catDetailBredFor": {
+        "description": "Label for bred for detail."
+    },
+    "catDetailPerfectFor": "Ideal para",
+    "@catDetailPerfectFor": {
+        "description": "Label for perfect for detail."
+    },
+    "catDetailHistory": "Historia",
+    "@catDetailHistory": {
+        "description": "Label for history detail."
+    },
+    "catDetailGeneralInfo": "Información general",
+    "@catDetailGeneralInfo": {
+        "description": "Section header for general information."
+    },
+    "catDetailPhysicalCharacteristics": "Características físicas",
+    "@catDetailPhysicalCharacteristics": {
+        "description": "Section header for physical characteristics."
+    },
+    "catDetailCountryCodes": "Códigos de país",
+    "@catDetailCountryCodes": {
+        "description": "Label for country codes detail row."
+    },
+    "catDetailWeightValue": "{metric} kg ({imperial} lbs)",
+    "@catDetailWeightValue": {
+        "description": "Formatted weight value with metric and imperial units.",
+        "placeholders": {
+            "metric": {
+                "type": "String",
+                "example": "3 - 5"
+            },
+            "imperial": {
+                "type": "String",
+                "example": "7 - 10"
+            }
+        }
+    },
+    "catDetailHeightValue": "{metric} cm ({imperial} in)",
+    "@catDetailHeightValue": {
+        "description": "Formatted height value with metric and imperial units.",
+        "placeholders": {
+            "metric": {
+                "type": "String",
+                "example": "20 - 25"
+            },
+            "imperial": {
+                "type": "String",
+                "example": "8 - 10"
+            }
+        }
+    },
+    "catDetailLifeSpanYears": "{years} años",
+    "@catDetailLifeSpanYears": {
+        "description": "Life span formatted with years unit.",
+        "placeholders": {
+            "years": {
+                "type": "String",
+                "example": "14 - 17"
+            }
+        }
     }
 }
