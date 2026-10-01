@@ -8,6 +8,7 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  cached_network_image: ^4.0.4
   flutter:
     sdk: flutter
 
@@ -21,6 +22,7 @@ flutter:
 
   assets:
     - assets/fonts/
+    - assets/images/
 
   fonts:
     - family: Quicksand

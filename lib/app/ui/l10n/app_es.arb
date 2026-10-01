@@ -2,5 +2,25 @@
     "appName": "CatBreeds",
     "@appName": {
         "description": "Application name."
+    },
+    "catsSearchHint": "Busca por nombre o raza",
+    "@catsSearchHint": {
+        "description": "Placeholder text for the search input on the cats home screen."
+    },
+    "catDetailLifeSpan": "Vida promedio",
+    "@catDetailLifeSpan": {
+        "description": "Label for the average life span detail row on the cat card."
+    },
+    "catDetailOriginCountry": "País de origen",
+    "@catDetailOriginCountry": {
+        "description": "Label for the country of origin detail row on the cat card."
+    },
+    "catsErrorTitle": "Ha ocurrido un error",
+    "@catsErrorTitle": {
+        "description": "Title shown on the error state of the cats home screen."
+    },
+    "catsErrorRetry": "Volver a intentar",
+    "@catsErrorRetry": {
+        "description": "Label for the retry button on the cats home screen error state."
     }
 }

@@ -1,4 +1,5 @@
 import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
+import 'package:catbreeds/app/ui/l10n/extension/l10n_extension.dart';
 import 'package:catbreeds/cats/data/datasources/local/cats_datasource_local_impl.dart';
 import 'package:catbreeds/cats/data/datasources/remote/cats_datasource_remote_impl.dart';
 import 'package:catbreeds/cats/data/repositories/cats_repository_impl.dart';
@@ -7,6 +8,7 @@ import 'package:catbreeds/cats/ui/home/view/widgets/cats_view.dart';
 import 'package:catbreeds/cats/ui/home/view_model/cats_view_model.dart';
 import 'package:catbreeds/cats/ui/home/view_model/event/cats_event.dart';
 import 'package:core/core.dart' hide State;
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class CatsScreen extends StatefulWidget {
@@ -42,7 +44,21 @@ class _CatsScreenState extends State<CatsScreen> {
           )..add(FetchCats()),
         ),
       ],
-      child: Scaffold(body: CatsView()),
+      child: ScaffoldTemplate(
+        expandedHeader: Align(
+          alignment: .topCenter,
+          child: Text(
+            context.l10n.appName,
+            style: context.typography.titleLarge,
+          ),
+        ),
+        shrinkingHeader: SearchInput(
+          hint: context.l10n.catsSearchHint,
+          readOnly: true,
+          onTap: () {},
+        ),
+        content: [CatsView()],
+      ),
     );
   }
 }

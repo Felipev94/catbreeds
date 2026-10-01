@@ -1,10 +1,14 @@
 import 'package:bloc_signals_flutter/bloc_signals_flutter.dart';
 import 'package:catbreeds/cats/data/repositories/entities/cat.dart';
 import 'package:catbreeds/cats/ui/home/view_model/cats_view_model.dart';
+import 'package:catbreeds/cats/ui/home/view_model/event/cats_event.dart';
 import 'package:catbreeds/cats/ui/home/view_model/state/cats_state.dart';
 import 'package:core/core.dart';
-import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+
+import 'error/cats_error_widget.dart';
+import 'loading/cats_skeleton_loader_widget.dart';
+import 'success/cats_list_widget.dart';
 
 class CatsView extends StatelessWidget {
   const CatsView({super.key});
@@ -15,10 +19,13 @@ class CatsView extends StatelessWidget {
       selector: (state) => state.cats,
       builder: (BuildContext context, UiState<List<Cat>> value) {
         return value.when<Widget>(
-          init: () => Container(),
-          loading: () => Container(),
-          success: (List<Cat> cats) => Container(color: context.colors.success),
-          error: (String message, _) => Container(color: context.colors.error),
+          init: () => CatsSkeletonView(),
+          loading: () => CatsSkeletonView(),
+          success: (List<Cat> cats) => CatsListWidget(cats: cats),
+          error: (String message, _) => CatsErrorWidget(
+            message: message,
+            onRetry: () => context.read<CatsViewModel>().add(FetchCats()),
+          ),
         );
       },
     );

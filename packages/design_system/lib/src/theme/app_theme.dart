@@ -89,7 +89,7 @@ abstract final class AppTheme {
         shape: const RoundedRectangleBorder(borderRadius: AppRadius.RADIUS_MD),
         margin: EdgeInsets.zero,
         clipBehavior: Clip.antiAlias,
-        color: colorExt.surface, // Dinámico según el tema
+        color: colorExt.surface,
       ),
 
       elevatedButtonTheme: ElevatedButtonThemeData(
