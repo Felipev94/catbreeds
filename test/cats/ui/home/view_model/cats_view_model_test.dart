@@ -56,7 +56,7 @@ void main() {
 
     group('FetchCats', () {
       blocSignalTest<CatsViewModel, CatsState>(
-        'emits [UiSuccess] when repository returns cats successfully',
+        'emits [UiLoading, UiSuccess] when repository returns cats successfully',
         setUp: () {
           when(mockCatsRepository.fetchCats()).thenAnswer(
             (_) async => const Right([sampleCat1, sampleCat2]),
@@ -66,6 +66,11 @@ void main() {
         act: (viewModel) => viewModel.add(FetchCats()),
         wait: const Duration(milliseconds: 50),
         expect: () => [
+          isA<CatsState>().having(
+            (s) => s.cats,
+            'cats',
+            isA<UiLoading<List<Cat>>>(),
+          ),
           isA<CatsState>().having(
             (s) => s.cats,
             'cats',
@@ -82,7 +87,7 @@ void main() {
       );
 
       blocSignalTest<CatsViewModel, CatsState>(
-        'emits [UiSuccess] with empty list when repository returns empty cats list',
+        'emits [UiLoading, UiSuccess] with empty list when repository returns empty cats list',
         setUp: () {
           when(mockCatsRepository.fetchCats()).thenAnswer(
             (_) async => const Right([]),
@@ -92,6 +97,11 @@ void main() {
         act: (viewModel) => viewModel.add(FetchCats()),
         wait: const Duration(milliseconds: 50),
         expect: () => [
+          isA<CatsState>().having(
+            (s) => s.cats,
+            'cats',
+            isA<UiLoading<List<Cat>>>(),
+          ),
           isA<CatsState>().having(
             (s) => s.cats,
             'cats',
@@ -108,7 +118,7 @@ void main() {
       );
 
       blocSignalTest<CatsViewModel, CatsState>(
-        'emits [UiError] when repository returns ServerFailure',
+        'emits [UiLoading, UiError] when repository returns ServerFailure',
         setUp: () {
           when(mockCatsRepository.fetchCats()).thenAnswer(
             (_) async => const Left(ServerFailure('Internal Server Error', statusCode: 500)),
@@ -118,6 +128,11 @@ void main() {
         act: (viewModel) => viewModel.add(FetchCats()),
         wait: const Duration(milliseconds: 50),
         expect: () => [
+          isA<CatsState>().having(
+            (s) => s.cats,
+            'cats',
+            isA<UiLoading<List<Cat>>>(),
+          ),
           isA<CatsState>().having(
             (s) => s.cats,
             'cats',
@@ -134,7 +149,7 @@ void main() {
       );
 
       blocSignalTest<CatsViewModel, CatsState>(
-        'emits [UiError] when repository returns NetworkFailure',
+        'emits [UiLoading, UiError] when repository returns NetworkFailure',
         setUp: () {
           when(mockCatsRepository.fetchCats()).thenAnswer(
             (_) async => const Left(NetworkFailure('No Internet Connection')),
@@ -144,6 +159,11 @@ void main() {
         act: (viewModel) => viewModel.add(FetchCats()),
         wait: const Duration(milliseconds: 50),
         expect: () => [
+          isA<CatsState>().having(
+            (s) => s.cats,
+            'cats',
+            isA<UiLoading<List<Cat>>>(),
+          ),
           isA<CatsState>().having(
             (s) => s.cats,
             'cats',
@@ -160,7 +180,7 @@ void main() {
       );
 
       blocSignalTest<CatsViewModel, CatsState>(
-        'emits [UiError] when repository returns UnknownFailure',
+        'emits [UiLoading, UiError] when repository returns UnknownFailure',
         setUp: () {
           when(mockCatsRepository.fetchCats()).thenAnswer(
             (_) async => const Left(UnknownFailure('Something went wrong')),
@@ -170,6 +190,11 @@ void main() {
         act: (viewModel) => viewModel.add(FetchCats()),
         wait: const Duration(milliseconds: 50),
         expect: () => [
+          isA<CatsState>().having(
+            (s) => s.cats,
+            'cats',
+            isA<UiLoading<List<Cat>>>(),
+          ),
           isA<CatsState>().having(
             (s) => s.cats,
             'cats',
